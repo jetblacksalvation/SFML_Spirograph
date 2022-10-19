@@ -38,18 +38,22 @@ private:
 
 int main()
 {
+	sf::Clock clock;
+
+	
 	sf::RectangleShape bruh;
 	bruh.setSize({ 1,1 });
 	bruh.setFillColor(sf::Color::Red);
 
 	//srand(time(NULL));
     sf::RenderWindow window({ 800,800 }, "hello");
+	//window.setFramerateLimit(120.f);
 
     sf::Event event;
 
-	circle first({400,400},70);
-	circle second({ 0,0 }, 20);
-	circle thrid({ 0,0 }, 84);
+	circle first({400,400},300);
+	circle second({ 0,0 }, 1);
+	circle thrid({ 0,0 }, 50);
 
     std::cout << "Hello World!\n";
 	while (window.isOpen() == true) {
@@ -58,9 +62,9 @@ int main()
 				window.close();
 			}
 		}
-		second.set_pos(first.ret_next(0.005));
+		second.set_pos(first.ret_next(0.00005));
 		thrid.set_pos(second.ret_next(0.04));
-		bruh.setPosition(thrid.ret_next(1));
+		bruh.setPosition(thrid.ret_next(.0005));
 		//draw plants
 		//window.clear(sf::Color::Black);//clear to black 
 
